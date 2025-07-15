@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIMIC - Investor & Producer Hub</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
     </head>
 <body>
     <header>
@@ -49,14 +55,20 @@
                 <h3>Behind-the-Scenes Photo Gallery</h3>
                 <p>A glimpse into the making of MIMIC!</p>
                 <div class="gallery-grid">
-                    <a href="bts_photos/bts_photo_01_full.jpg" data-lightbox="mimic-gallery" data-title="On set with the crew">
+                    <a href="bts_photos/bts_photo_01_full.jpg" data-lightbox="mimic-gallery" data-title="Director setting up a shot.">
                         <img src="bts_photos/bts_photo_01_thumb.jpg" alt="Behind the scenes photo 1">
                     </a>
-                    <a href="bts_photos/bts_photo_02_full.jpg" data-lightbox="mimic-gallery" data-title="Director's vision">
+                    <a href="bts_photos/bts_photo_02_full.jpg" data-lightbox="mimic-gallery" data-title="Casting for the lead role.">
                         <img src="bts_photos/bts_photo_02_thumb.jpg" alt="Behind the scenes photo 2">
                     </a>
-                    <a href="bts_photos/bts_photo_03_full.jpg" data-lightbox="mimic-gallery" data-title="Costume details">
+                    <a href="bts_photos/bts_photo_03_full.jpg" data-lightbox="mimic-gallery" data-title="Working on set design.">
                         <img src="bts_photos/bts_photo_03_thumb.jpg" alt="Behind the scenes photo 3">
+                    </a>
+                    <a href="bts_photos/bts_photo_04_full.jpg" data-lightbox="mimic-gallery" data-title="Pre-production discussions.">
+                        <img src="bts_photos/bts_photo_04_thumb.jpg" alt="Behind the scenes photo 4">
+                    </a>
+                    <a href="bts_photos/bts_photo_05_full.jpg" data-lightbox="mimic-gallery" data-title="Crew reviewing footage.">
+                        <img src="bts_photos/bts_photo_05_thumb.jpg" alt="Behind the scenes photo 5">
                     </a>
                     </div>
                 <a href="downloads/mimic_bts_photos.zip" download="MIMIC_BTS_Photos.zip" class="button download-all">Download All Photos (.zip)</a>
@@ -77,28 +89,34 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>North Hollywood CineFest</strong></td>
-                        <td>June 20, 2025</td>
-                        <td><strong>Submitted, Accepted!</strong></td>
-                        <td>Screening MIMIC! Event Dates: August 28 – 31, 2025. Schedule details TBD – we will update here!</td>
+                        <td data-label="Festival Name"><strong>North Hollywood CineFest</strong></td>
+                        <td data-label="Submission Date">June 20, 2025</td>
+                        <td data-label="Status"><strong>Submitted, Accepted!</strong></td>
+                        <td data-label="Notes">Screening MIMIC! Event Dates: August 28 – 31, 2025. Schedule details TBD – we will update here!</td>
                     </tr>
                     <tr>
-                        <td>Sundance Film Festival</td>
-                        <td>July 10, 2025</td>
-                        <td>Submitted, Awaiting Response</td>
-                        <td>Notification by Dec 2025.</td>
+                        <td data-label="Festival Name">Sundance Film Festival</td>
+                        <td data-label="Submission Date">July 10, 2025</td>
+                        <td data-label="Status">Submitted, Awaiting Response</td>
+                        <td data-label="Notes">Notification by Dec 2025.</td>
                     </tr>
                     <tr>
-                        <td>SXSW Film Festival</td>
-                        <td>(Not Yet Submitted)</td>
-                        <td>(Not Yet Submitted)</td>
-                        <td>Target Submission: Oct 2025.</td>
+                        <td data-label="Festival Name">SXSW Film Festival</td>
+                        <td data-label="Submission Date">(Not Yet Submitted)</td>
+                        <td data-label="Status">(Not Yet Submitted)</td>
+                        <td data-label="Notes">Target Submission: Oct 2025.</td>
                     </tr>
                     <tr>
-                        <td>Tribeca Film Festival</td>
-                        <td>April 1, 2025</td>
-                        <td>Submitted, Not Accepted</td>
-                        <td>Received notification May 20, 2025.</td>
+                        <td data-label="Festival Name">Tribeca Film Festival</td>
+                        <td data-label="Submission Date">April 1, 2025</td>
+                        <td data-label="Status">Submitted, Not Accepted</td>
+                        <td data-label="Notes">Received notification May 20, 2025.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Festival Name">Cannes Film Festival</td>
+                        <td data-label="Submission Date">(Not Yet Submitted)</td>
+                        <td data-label="Status">(Not Yet Submitted)</td>
+                        <td data-label="Notes">Exploring options for next year.</td>
                     </tr>
                 </tbody>
             </table>
@@ -111,7 +129,7 @@
             <div class="news-item">
                 <h3>MIMIC is Officially on IMDb!</h3>
                 <p>Congratulations, everyone! MIMIC now has its own official page on IMDb, recognizing our hard work and the film's standing.</p>
-                <p>View the MIMIC IMDb page here: <a href="https://pro.imdb.com/title/tt28823774/" target="_blank">IMDb.com/title/tt28823774</a> (<em>Note: This is a placeholder URL for demonstration. Replace with your actual IMDb page URL!</em>)</p>
+                <p>View the MIMIC IMDb page here: <a href="https://pro.imdb.com/title/tt28823774/" target="_blank">IMDb.com/title/tt28823774</a> (<em>Note: Replace this with your actual IMDb page URL!</em>)</p>
                 <h4>Claiming Your IMDb Pro Credit:</h4>
                 <p>To "claim" your credit and ensure your name appears prominently with a profile picture, you'll need an IMDb Pro Membership. You can sign up here: <a href="https://m.imdb.com/membership" target="_blank">IMDb Pro Membership</a></p>
                 <p>Once you've completed your membership and set up your profile, please notify us so we can ensure your specific profile is correctly linked to the MIMIC page.</p>
@@ -132,8 +150,5 @@
 
     <footer>
         <p>Thank you again for your patience and for being part of this Red Fox journey with MIMIC. Let the festivals begin!</p>
-        <p>For inquiries, please contact: [Your Name/Contact Person] at [Your Email Address] or [Your Phone Number]</p>
+        <p>For inquiries, please contact: [**Your Name/Contact Person**] at [**Your Email Address**] or [**Your Phone Number**]</p>
         </footer>
-
-    </body>
-</html>
