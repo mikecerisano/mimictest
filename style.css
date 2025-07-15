@@ -1,74 +1,129 @@
+/* Google Fonts Imported: Montserrat for body text, Playfair Display for headings */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f2f5; /* Lighter background */
     color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+/* Headings with Playfair Display */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #2a2a2a; /* Darker, sophisticated black */
+    margin-top: 0;
 }
 
-header h1 {
-    margin: 0;
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+
+h2 {
     font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #db3441; /* Striking accent color */
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    color: #4a4a4a;
+}
+
+/* Header Styling */
+header {
+    background-color: #1a1a1a; /* Very dark, almost black */
+    color: #e0e0e0;
+    padding: 3rem 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden; /* For potential background effects */
+}
+
+header::before { /* Subtle overlay for depth */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    z-index: 1;
+}
+
+header h1, header p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
 }
 
 header p {
-    margin-top: 0.5rem;
-    font-style: italic;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-top: 10px;
 }
 
+/* Main Content Area */
 main {
-    padding: 20px;
-    max-width: 960px;
-    margin: 20px auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    padding: 40px 20px;
+    max-width: 1000px; /* Slightly wider main content */
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 12px; /* More pronounced rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 section {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #e0e0e0; /* Dashed separator for a softer look */
 }
 
 section:last-child {
     border-bottom: none;
 }
 
-h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-h3 {
-    color: #34495e;
-    margin-top: 25px;
-    margin-bottom: 15px;
-}
-
+/* Asset Item Styling */
 .asset-item {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
     margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.asset-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
 .poster-image {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 15px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Center poster */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
 }
 
+.poster-image:hover {
+    transform: scale(1.01);
+}
+
+/* Video Container */
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
@@ -76,7 +131,9 @@ h3 {
     overflow: hidden;
     max-width: 100%;
     background: #000;
-    margin: 15px 0;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .video-container iframe {
@@ -85,125 +142,280 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 8px; /* Match container border-radius */
 }
 
+/* Buttons */
 .button {
-    display: inline-block;
-    background-color: #3498db;
+    display: inline-flex; /* Use flexbox for icon alignment if added later */
+    align-items: center;
+    justify-content: center;
+    background-color: #db3441; /* Accent red */
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 25px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-    margin-right: 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 15px;
+    margin-right: 15px; /* Spacing between multiple buttons */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
-    background-color: #2980b9;
+    background-color: #c02d38; /* Darker red on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .button.download-all {
-    margin-top: 20px;
+    margin-top: 30px; /* More space for the main download button */
 }
 
+/* Warning Note */
 .warning-note {
-    background-color: #fcf8e3;
-    border: 1px solid #faebcc;
-    color: #8a6d3b;
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    background-color: #fff3cd; /* Light yellow background */
+    border: 1px solid #ffeeba; /* Slightly darker yellow border */
+    color: #856404; /* Dark yellow text */
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* Gallery Grid Styles */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 15px;
-    margin-top: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Slightly larger grid items */
+    gap: 20px; /* More space between images */
+    margin-top: 25px;
+}
+
+.gallery-grid a { /* Ensure links around images don't add unwanted styling */
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .gallery-grid img {
     width: 100%;
-    height: 150px; /* Fixed height for thumbnails */
-    object-fit: cover; /* Ensures images cover the area without distortion */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
+    height: 180px; /* Fixed height for thumbnails */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.03);
+    transform: scale(1.05); /* More pronounced hover effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
 /* Festival Table Styles */
 .festival-table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    border-collapse: separate; /* For rounded corners */
+    border-spacing: 0;
+    margin-top: 25px;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures rounded corners are applied */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .festival-table th, .festival-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px;
     text-align: left;
 }
 
 .festival-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+    background-color: #f8f8f8; /* Lighter header background */
+    font-weight: 700;
     color: #555;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
 
 .festival-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #fcfcfc;
 }
 
 .festival-table tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: #f0f0f0; /* Subtle hover for rows */
 }
 
+.festival-table tbody tr:last-child td {
+    border-bottom: none; /* Remove border from last row */
+}
+
+/* News Item Styling */
 .news-item {
-    background-color: #ecf0f1;
-    border-left: 5px solid #3498db;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+    background-color: #f7f7f7;
+    border-left: 5px solid #db3441; /* Accent red border */
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .news-item h3 {
     margin-top: 0;
-    color: #2c3e50;
+    color: #2a2a2a;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 .news-item blockquote {
     font-style: italic;
-    color: #555;
-    margin: 10px 0;
-    padding-left: 20px;
-    border-left: 3px solid #ccc;
+    color: #666;
+    margin: 15px 0;
+    padding-left: 25px;
+    border-left: 4px solid #b0b0b0; /* Slightly thicker, more prominent quote border */
+    background-color: #fafafa;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
 }
 
+/* Footer Styling */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #2c3e50;
-    color: #fff;
-    font-size: 0.9rem;
-    margin-top: 30px;
+    padding: 30px;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    margin-top: 50px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
 }
 
 footer p {
-    margin: 5px 0;
+    margin: 8px 0;
+    font-weight: 300;
 }
 
+/* Link Styling */
 a {
-    color: #3498db;
+    color: #db3441; /* Use the accent red for links */
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 a:hover {
+    color: #c02d38;
     text-decoration: underline;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        margin: 15px;
+        padding: 25px 15px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-right: 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery-grid img {
+        height: 120px;
+    }
+
+    .festival-table th, .festival-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .festival-table thead {
+        display: none; /* Hide header on small screens */
+    }
+
+    .festival-table tbody, .festival-table tr, .festival-table td {
+        display: block; /* Make table cells stack */
+        width: 100%;
+    }
+
+    .festival-table tr {
+        margin-bottom: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .festival-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .festival-table td::before {
+        content: attr(data-label); /* Use data-label for pseudo-elements */
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+        color: #555;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    header p {
+        font-size: 0.9rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    h3 {
+        font-size: 1.3rem;
+    }
+    .button {
+        display: block; /* Stack buttons vertically */
+        width: calc(100% - 30px); /* Adjust for padding */
+        margin: 15px auto 0 auto; /* Center block buttons */
+    }
+}
+
+/* Styling for data-labels on mobile table */
+/* Add data-label attributes to your HTML table cells like this:
+   <td data-label="Festival Name">North Hollywood CineFest</td>
+*/
