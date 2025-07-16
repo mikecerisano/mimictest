@@ -1,10 +1,10 @@
 /* Google Fonts Imported: Oswald for headings, Lato for body text */
 body {
-    font-family: 'Lato', sans-serif; /* Changed body font to Lato */
+    font-family: 'Lato', sans-serif;
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Changed background to pure white */
+    background-color: #ffffff;
     color: #333;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -12,31 +12,31 @@ body {
 
 /* Headings with Oswald */
 h1, h2, h3 {
-    font-family: 'Oswald', sans-serif; /* Changed heading font to Oswald */
-    color: #2a2a2a; /* Darker, sophisticated black */
+    font-family: 'Oswald', sans-serif;
+    color: #2a2a2a;
     margin-top: 0;
-    text-transform: uppercase; /* Make headings uppercase for modern look */
-    letter-spacing: 0.05em; /* Add slight letter spacing */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 h1 {
-    font-size: 3.8rem; /* Main title font size for MIMIC */
+    font-size: 3.8rem;
     font-weight: 700;
-    letter-spacing: 0.1em; /* More pronounced letter spacing for H1 */
-    line-height: 1.1; /* Adjust line height for better stacking */
-    margin: 0; /* Reset margin */
+    letter-spacing: 0.1em;
+    line-height: 1.1;
+    margin: 0;
 }
 
 h2 {
-    font-size: 2.8rem; /* Slightly larger section titles */
+    font-size: 2.8rem;
     font-weight: 600;
-    margin-bottom: 30px; /* More space below headings */
-    border-bottom: 3px solid #db3441; /* Striking accent color */
+    margin-bottom: 30px;
+    border-bottom: 3px solid #db3441;
     padding-bottom: 12px;
 }
 
 h3 {
-    font-size: 2rem; /* Slightly larger sub-headings */
+    font-size: 2rem;
     font-weight: 600;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -46,66 +46,65 @@ h3 {
 
 /* Header Styling */
 header {
-    background-color: #1a1a1a; /* Very dark, almost black */
+    background-color: #1a1a1a;
     color: #e0e0e0;
-    padding: 20px 30px; /* Adjusted padding to accommodate logo and text */
-    text-align: center; /* Fallback, flexbox will override */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for impact */
+    padding: 20px 30px;
+    text-align: center; /* Fallback */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
 
-    /* New Flexbox Layout for Header */
+    /* Flexbox Layout for Header */
     display: flex;
-    align-items: center; /* Vertically center items */
-    justify-content: flex-start; /* Align items to the start (left) */
-    min-height: 120px; /* Set a minimum height for the header */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px; /* Space between logo and text group */
 }
 
-header::before { /* Subtle overlay for depth */
+header::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)); /* Darker gradient */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8));
     z-index: 1;
 }
 
 /* Header Logo Styling */
 .header-logo {
-    height: 100px; /* Set a fixed height for the logo */
+    max-height: 70px; /* Control max height of the logo on larger screens */
+    height: 100%; /* Make it fill the available header height (minus padding) */
     width: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensure logo scales within its bounds */
-    display: block; /* Remove any inline-block spacing */
-    margin-right: 30px; /* Space between logo and text */
-    position: relative; /* Ensure it's above the overlay */
+    object-fit: contain; /* Ensure logo scales down without being cropped */
+    display: block;
+    position: relative;
     z-index: 2;
 }
 
 .header-text-group {
-    text-align: left; /* Align text to the left within its group */
+    text-align: left;
     position: relative;
     z-index: 2;
-    flex-grow: 1; /* Allow text group to take available space */
+    flex-grow: 1;
 }
 
 .header-text-group h1 {
-    font-size: 3.5rem; /* MIMIC title size */
+    font-size: 3.5rem;
     letter-spacing: 0.1em;
-    margin-bottom: 5px; /* Space between MIMIC and Producer Hub */
+    margin-bottom: 5px;
 }
 
 .header-text-group .subtitle {
     font-family: 'Lato', sans-serif;
-    font-size: 1.5rem; /* Smaller size for Producer Hub */
+    font-size: 1.5rem;
     font-weight: 400;
     opacity: 0.9;
-    margin-top: 0; /* Remove default paragraph top margin */
+    margin-top: 0;
     letter-spacing: 0.05em;
-    text-transform: none; /* Subtitle usually isn't all caps */
+    text-transform: none;
 }
-
 
 .last-updated-text-outside {
     text-align: center;
@@ -113,24 +112,23 @@ header::before { /* Subtle overlay for depth */
     font-size: 0.9rem;
     color: #666;
     margin-top: 20px;
-    margin-bottom: -20px; /* Pull it up a bit towards the main content */
+    margin-bottom: -20px;
 }
-
 
 /* Main Content Area */
 main {
-    padding: 50px 30px; /* More padding inside the main content box */
-    max-width: 1050px; /* Slightly wider main content */
-    margin: 40px auto; /* More margin top/bottom */
+    padding: 50px 30px;
+    max-width: 1050px;
+    margin: 40px auto;
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 section {
-    margin-bottom: 60px; /* More space between sections */
+    margin-bottom: 60px;
     padding-bottom: 35px;
-    border-bottom: 1px solid #e0e0e0; /* Solid, light separator for a cleaner look */
+    border-bottom: 1px solid #e0e0e0;
 }
 
 section:last-child {
@@ -140,44 +138,44 @@ section:last-child {
 /* Asset Item Styling */
 .asset-item {
     background-color: #fdfdfd;
-    border: 1px solid #f0f0f0; /* Lighter border */
-    border-radius: 10px; /* Slightly more rounded */
-    padding: 30px; /* More padding */
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    padding: 30px;
     margin-bottom: 40px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06); /* Subtler shadow */
-    transition: all 0.3s ease; /* Smooth transition for all properties */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
 }
 
 .asset-item:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-3px); /* Lift effect on hover */
+    transform: translateY(-3px);
 }
 
 .poster-image {
-    max-width: 80%; /* Slightly narrower poster for better centering on wide screens */
+    max-width: 80%;
     height: auto;
     display: block;
-    margin: 30px auto; /* More margin around poster */
+    margin: 30px auto;
     border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow for poster */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease;
 }
 
 .poster-image:hover {
-    transform: scale(1.02); /* More subtle scale on hover */
+    transform: scale(1.02);
 }
 
 /* Video Container */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     max-width: 100%;
     background: #000;
     margin: 25px 0;
     border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow for video */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .video-container iframe {
@@ -186,7 +184,7 @@ section:last-child {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px; /* Match container border-radius */
+    border-radius: 10px;
 }
 
 /* Buttons */
@@ -194,25 +192,25 @@ section:last-child {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #db3441; /* Accent red */
+    background-color: #db3441;
     color: #fff;
-    padding: 14px 30px; /* Larger buttons */
+    padding: 14px 30px;
     text-decoration: none;
-    border-radius: 8px; /* More rounded buttons */
+    border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    margin-top: 20px; /* More space above buttons */
+    margin-top: 20px;
     margin-right: 20px;
-    font-weight: 700; /* Bolder text */
-    letter-spacing: 0.8px; /* More letter spacing */
+    font-weight: 700;
+    letter-spacing: 0.8px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
-    background-color: #c02d38; /* Darker red on hover */
-    transform: translateY(-3px); /* More pronounced lift effect */
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    background-color: #c02d38;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
 }
 
 .button:active {
@@ -221,41 +219,40 @@ section:last-child {
 }
 
 .button.download-all {
-    margin-top: 35px; /* More space for the main download button */
+    margin-top: 35px;
 }
 
 /* Warning Note */
 .warning-note {
-    background-color: #fff3cd; /* Light yellow background */
-    border: 1px solid #ffeeba; /* Slightly darker yellow border */
-    color: #856404; /* Dark yellow text */
-    padding: 18px 25px; /* More padding */
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 18px 25px;
     border-radius: 8px;
     margin-bottom: 30px;
-    font-size: 1rem; /* Slightly larger text */
+    font-size: 1rem;
     line-height: 1.6;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* More subtle shadow */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* Gallery Grid Styles */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Larger grid items */
-    gap: 25px; /* More space between images */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
     margin-top: 30px;
 }
 
-.gallery-grid a { /* Ensure links around images don't add unwanted styling */
+.gallery-grid a {
     display: block;
     text-decoration: none;
     color: inherit;
-    /* Add for smooth image loading if using lazy load later */
     line-height: 0;
 }
 
 .gallery-grid img {
     width: 100%;
-    height: 200px; /* Fixed height for thumbnails, matching minmax */
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -263,63 +260,76 @@ section:last-child {
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.08); /* More pronounced hover effect */
+    transform: scale(1.08);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
+/* News Section Logo Styling */
+.news-logo {
+    max-width: 60%; /* Control width relative to its container */
+    max-height: 180px; /* Max height to prevent excessive vertical size */
+    width: auto;
+    height: auto; /* Ensures aspect ratio is maintained */
+    display: block; /* Allows margin auto for centering */
+    margin: 0 auto 20px auto; /* Centers horizontally, adds space below */
+    border-radius: 5px; /* Subtle rounded corners for the logo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+
 /* Festival Table Styles */
 .festival-table {
     width: 100%;
-    border-collapse: separate; /* For rounded corners */
+    border-collapse: separate;
     border-spacing: 0;
     margin-top: 30px;
-    border-radius: 10px; /* More rounded table corners */
-    overflow: hidden; /* Ensures rounded corners are applied */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .festival-table th, .festival-table td {
-    border-bottom: 1px solid #ededed; /* Very light border */
-    padding: 18px; /* More padding in table cells */
+    border-bottom: 1px solid #ededed;
+    padding: 18px;
     text-align: left;
 }
 
 .festival-table th {
-    background-color: #f5f5f5; /* Lighter header background */
+    background-color: #f5f5f5;
     font-weight: 700;
     color: #555;
     text-transform: uppercase;
     font-size: 0.95rem;
-    letter-spacing: 0.8px; /* More letter spacing for headers */
+    letter-spacing: 0.8px;
 }
 
 .festival-table tbody tr:nth-child(even) {
-    background-color: #fbfbfb; /* Very subtle stripe */
+    background-color: #fbfbfb;
 }
 
 .festival-table tbody tr:hover {
-    background-color: #eef1f4; /* More noticeable hover for rows */
+    background-color: #eef1f4;
 }
 
 .festival-table tbody tr:last-child td {
-    border-bottom: none; /* Remove border from last row */
+    border-bottom: none;
 }
 
-/* News Item Styling */
+/* News Item Styling (already defined, ensuring correct order) */
 .news-item {
-    background-color: #f7f9fa; /* Slightly off-white background */
-    border-left: 5px solid #db3441; /* Accent red border */
-    padding: 25px; /* More padding */
+    background-color: #f7f9fa;
+    border-left: 5px solid #db3441;
+    padding: 25px;
     margin-bottom: 30px;
-    border-radius: 10px; /* More rounded corners */
+    border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .news-item h3 {
     margin-top: 0;
     color: #2a2a2a;
-    font-size: 1.8rem; /* Slightly larger news heading */
+    font-size: 1.8rem;
     margin-bottom: 12px;
 }
 
@@ -332,9 +342,9 @@ section:last-child {
     font-style: italic;
     color: #666;
     margin: 20px 0;
-    padding-left: 30px; /* More padding */
-    border-left: 5px solid #b0b0b0; /* Thicker, more prominent quote border */
-    background-color: #fdfdfd; /* Lighter background for quote */
+    padding-left: 30px;
+    border-left: 5px solid #b0b0b0;
+    background-color: #fdfdfd;
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 6px;
@@ -343,10 +353,10 @@ section:last-child {
 /* Footer Styling */
 footer {
     text-align: center;
-    padding: 40px; /* More padding */
+    padding: 40px;
     background-color: #1a1a1a;
     color: #e0e0e0;
-    font-size: 1rem; /* Slightly larger text */
+    font-size: 1rem;
     margin-top: 60px;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -359,7 +369,7 @@ footer p {
 
 /* Link Styling */
 a {
-    color: #db3441; /* Use the accent red for links */
+    color: #db3441;
     text-decoration: none;
     transition: color 0.2s ease, text-decoration 0.2s ease;
 }
@@ -373,12 +383,12 @@ a:hover {
 @media (max-width: 992px) {
     /* Header adjustments */
     header {
-        min-height: 100px; /* Slightly smaller header on medium screens */
+        min-height: 100px;
         padding: 15px 20px;
+        gap: 20px; /* Adjust gap for smaller screens */
     }
     .header-logo {
-        height: 80px; /* Scale logo down */
-        margin-right: 20px;
+        max-height: 60px; /* Scale logo down */
     }
     .header-text-group h1 {
         font-size: 3rem;
@@ -419,10 +429,10 @@ a:hover {
         flex-direction: column; /* Stack logo and text vertically */
         min-height: auto; /* Allow height to adjust to content */
         padding: 20px 15px;
+        gap: 10px; /* Adjust gap for stacked items */
     }
     .header-logo {
-        height: 70px; /* Further scale logo down */
-        margin-right: 0; /* Remove horizontal margin */
+        max-height: 60px; /* Further scale logo down */
         margin-bottom: 10px; /* Add vertical space below logo */
     }
     .header-text-group {
@@ -507,7 +517,7 @@ a:hover {
 @media (max-width: 480px) {
     /* Header adjustments */
     .header-logo {
-        height: 60px; /* Even smaller logo for very small screens */
+        max-height: 50px; /* Even smaller logo for very small screens */
     }
     .header-text-group h1 {
         font-size: 2rem;
