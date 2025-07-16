@@ -70,6 +70,20 @@ header h1, header p {
     margin: 0;
 }
 
+/* Header Logo Styling */
+.header-logo {
+    max-height: 80px; /* Adjust as needed */
+    width: auto;
+    display: block; /* Ensures it takes its own line for centering */
+    margin: 0 auto 20px auto; /* Centers horizontally and adds space below */
+    padding-top: 10px; /* A little padding from the very top of the header */
+}
+
+/* Adjust header h1 margin-top to account for logo */
+header h1 {
+    margin-top: 10px; /* Reduced margin to bring it closer to the logo */
+}
+
 header p {
     font-family: 'Lato', sans-serif; /* Ensure consistent body font */
     font-size: 1.2rem; /* Slightly larger tagline */
@@ -359,6 +373,10 @@ a:hover {
     .gallery-grid img {
         height: 160px;
     }
+    /* Adjust header h1 margin-top for smaller screens */
+    header h1 {
+        margin-top: 5px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -431,6 +449,12 @@ a:hover {
     .news-item, .asset-item {
         padding: 20px;
     }
+    /* Adjust header h1 margin-top for smaller screens */
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 0.08em;
+        margin-top: 5px; /* Adjust for smaller logo on mobile */
+    }
 }
 
 @media (max-width: 480px) {
@@ -467,5 +491,9 @@ a:hover {
         width: 45%;
         padding-left: 10px;
         font-size: 0.8rem;
+    }
+    /* Adjust header h1 margin-top for extra small screens */
+    header h1 {
+        margin-top: 5px; /* Adjust for smaller logo on very small mobile */
     }
 }
