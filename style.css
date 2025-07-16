@@ -20,9 +20,11 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 3.8rem; /* Slightly larger main title */
+    font-size: 3.8rem; /* Main title font size for MIMIC */
     font-weight: 700;
     letter-spacing: 0.1em; /* More pronounced letter spacing for H1 */
+    line-height: 1.1; /* Adjust line height for better stacking */
+    margin: 0; /* Reset margin */
 }
 
 h2 {
@@ -46,11 +48,17 @@ h3 {
 header {
     background-color: #1a1a1a; /* Very dark, almost black */
     color: #e0e0e0;
-    padding: 3.5rem 0; /* More vertical padding */
-    text-align: center;
+    padding: 20px 30px; /* Adjusted padding to accommodate logo and text */
+    text-align: center; /* Fallback, flexbox will override */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for impact */
     position: relative;
     overflow: hidden;
+
+    /* New Flexbox Layout for Header */
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: flex-start; /* Align items to the start (left) */
+    min-height: 120px; /* Set a minimum height for the header */
 }
 
 header::before { /* Subtle overlay for depth */
@@ -64,33 +72,50 @@ header::before { /* Subtle overlay for depth */
     z-index: 1;
 }
 
-header h1, header p {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-}
-
 /* Header Logo Styling */
 .header-logo {
-    max-height: 80px; /* Adjust as needed */
-    width: auto;
-    display: block; /* Ensures it takes its own line for centering */
-    margin: 0 auto 20px auto; /* Centers horizontally and adds space below */
-    padding-top: 10px; /* A little padding from the very top of the header */
+    height: 100px; /* Set a fixed height for the logo */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure logo scales within its bounds */
+    display: block; /* Remove any inline-block spacing */
+    margin-right: 30px; /* Space between logo and text */
+    position: relative; /* Ensure it's above the overlay */
+    z-index: 2;
 }
 
-/* Adjust header h1 margin-top to account for logo */
-header h1 {
-    margin-top: 10px; /* Reduced margin to bring it closer to the logo */
+.header-text-group {
+    text-align: left; /* Align text to the left within its group */
+    position: relative;
+    z-index: 2;
+    flex-grow: 1; /* Allow text group to take available space */
 }
 
-header p {
-    font-family: 'Lato', sans-serif; /* Ensure consistent body font */
-    font-size: 1.2rem; /* Slightly larger tagline */
-    font-weight: 300;
-    opacity: 0.9; /* Slightly less opaque */
-    margin-top: 15px;
+.header-text-group h1 {
+    font-size: 3.5rem; /* MIMIC title size */
+    letter-spacing: 0.1em;
+    margin-bottom: 5px; /* Space between MIMIC and Producer Hub */
 }
+
+.header-text-group .subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem; /* Smaller size for Producer Hub */
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 0; /* Remove default paragraph top margin */
+    letter-spacing: 0.05em;
+    text-transform: none; /* Subtitle usually isn't all caps */
+}
+
+
+.last-updated-text-outside {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 20px;
+    margin-bottom: -20px; /* Pull it up a bit towards the main content */
+}
+
 
 /* Main Content Area */
 main {
@@ -346,9 +371,22 @@ a:hover {
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
-    h1 {
+    /* Header adjustments */
+    header {
+        min-height: 100px; /* Slightly smaller header on medium screens */
+        padding: 15px 20px;
+    }
+    .header-logo {
+        height: 80px; /* Scale logo down */
+        margin-right: 20px;
+    }
+    .header-text-group h1 {
         font-size: 3rem;
     }
+    .header-text-group .subtitle {
+        font-size: 1.3rem;
+    }
+
     h2 {
         font-size: 2.2rem;
     }
@@ -373,16 +411,31 @@ a:hover {
     .gallery-grid img {
         height: 160px;
     }
-    /* Adjust header h1 margin-top for smaller screens */
-    header h1 {
-        margin-top: 5px;
-    }
 }
 
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
+    /* Header adjustments */
+    header {
+        flex-direction: column; /* Stack logo and text vertically */
+        min-height: auto; /* Allow height to adjust to content */
+        padding: 20px 15px;
     }
+    .header-logo {
+        height: 70px; /* Further scale logo down */
+        margin-right: 0; /* Remove horizontal margin */
+        margin-bottom: 10px; /* Add vertical space below logo */
+    }
+    .header-text-group {
+        text-align: center; /* Center text when stacked */
+    }
+    .header-text-group h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+    }
+    .header-text-group .subtitle {
+        font-size: 1.2rem;
+    }
+
     h2 {
         font-size: 2rem;
     }
@@ -449,22 +502,21 @@ a:hover {
     .news-item, .asset-item {
         padding: 20px;
     }
-    /* Adjust header h1 margin-top for smaller screens */
-    header h1 {
-        font-size: 2rem;
-        letter-spacing: 0.08em;
-        margin-top: 5px; /* Adjust for smaller logo on mobile */
-    }
 }
 
 @media (max-width: 480px) {
-    header h1 {
+    /* Header adjustments */
+    .header-logo {
+        height: 60px; /* Even smaller logo for very small screens */
+    }
+    .header-text-group h1 {
         font-size: 2rem;
         letter-spacing: 0.08em;
     }
-    header p {
-        font-size: 0.9rem;
+    .header-text-group .subtitle {
+        font-size: 1rem;
     }
+
     h2 {
         font-size: 1.6rem;
     }
@@ -491,9 +543,5 @@ a:hover {
         width: 45%;
         padding-left: 10px;
         font-size: 0.8rem;
-    }
-    /* Adjust header h1 margin-top for extra small screens */
-    header h1 {
-        margin-top: 5px; /* Adjust for smaller logo on very small mobile */
     }
 }
